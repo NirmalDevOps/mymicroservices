@@ -25,7 +25,7 @@ public class MovieResource {
 		//return new Movie(movieid, "Transformer2");
 		//https://api.themoviedb.org/3/movie/550?api_key=4a0f542fae1a13a3f94a3c211e2540e1
 		//https://api.themoviedb.org/3/movie/100?api_key=4a0f542fae1a13a3f94a3c211e2540e1
-		MovieSummary movieSummary = restTemplate.getForObject("https://api.themoviedb.org/3/movie/"+movieid+"?apiKey="+api_key, MovieSummary.class);
+		MovieSummary movieSummary = restTemplate.getForObject("https://api.themoviedb.org/3/movie/"+movieid+"?api_key="+ api_key, MovieSummary.class);
 		return new Movie(movieid,movieSummary.getTitle(), movieSummary.getOverview());
 	}
 
